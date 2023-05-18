@@ -37,6 +37,13 @@ export default function MainCoinList() {
   };
   return (
     <>
+    <h2>Current Market</h2>
+    <div className="crypto-title">
+        <h4>COIN</h4>
+        <h4>PRICE</h4>
+        <h4>24H CHANGE</h4>
+        <h4>MARKET CAP</h4>
+    </div>
       {data.map((coin) => (
         <div key={coin.id} className="crypto-container">
           <div className="crypto-name">

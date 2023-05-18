@@ -1,10 +1,11 @@
 import React from "react";
-import MainCoinList from "../components/MainCoinList";
+import MainCoinList from "../components/CoinMainList";
+import "../assets/style.css"
 
 export default function Home() {
   return (
     <div>
-      <MainCoinList />
+        <MainCoinList />
     </div>
   );
 }

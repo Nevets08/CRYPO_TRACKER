@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import datas from "../data/data.json";
+import allData from "../data/allData.json";
 
 export default function MainCoinList() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   const fetchData = () => {
-    setData(datas);
+    setData(allData);
     /*
     axios
       .get(
@@ -37,13 +37,13 @@ export default function MainCoinList() {
   };
   return (
     <>
-    <h2>Current Market</h2>
-    <div className="crypto-title">
+      <h2>Current Market</h2>
+      <div className="crypto-title">
         <h4>COIN</h4>
         <h4>PRICE</h4>
         <h4>24H CHANGE</h4>
         <h4>MARKET CAP</h4>
-    </div>
+      </div>
       {data.map((coin) => (
         <div key={coin.id} className="crypto-container">
           <div className="crypto-name">
@@ -61,7 +61,7 @@ export default function MainCoinList() {
           <p>
             {new Intl.NumberFormat("fr-FR", {
               style: "currency",
-              currency: "EUR"
+              currency: "EUR",
             }).format(coin.market_cap)}
           </p>
         </div>

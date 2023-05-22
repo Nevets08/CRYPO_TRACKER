@@ -11,7 +11,7 @@ export default function Hero() {
           finance, borderless digital assets. Invest, trade, and redefine
           money's future in real-time.
         </p>
-        <button>View</button>
+        <a href="#market" className="button">View</a>
       </div>
       <div className="right-hero">
         <img src={hero} alt="" />

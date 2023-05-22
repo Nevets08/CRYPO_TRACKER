@@ -1,0 +1,30 @@
+.hero {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  .left-hero {
+    width: 50%;
+    p {
+      margin: 20px 0;
+      width: 85%;
+    }
+  }
+  .right-hero {
+    width: 50%;
+    img {
+      text-align: center;
+      width: 100%;
+      animation: movecoin 2s infinite;
+    }
+  }
+}
+
+@keyframes moveUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}

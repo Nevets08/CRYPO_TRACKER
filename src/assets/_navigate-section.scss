@@ -1,0 +1,29 @@
+#navigate-section h2 {
+  text-align: center;
+}
+
+.navigate {
+  display: flex;
+  margin-top: 50px;
+}
+
+.navigate {
+  img {
+    width: 200px;
+    height: 100%;
+    margin: auto 5%;
+  }
+  h5 {
+    svg {
+      margin-right: 10px;
+    }
+  }
+}
+
+.navigate-card {
+  background-color: #242424;
+  border-radius: 10px;
+  border: 1px solid #cbfc01;
+  padding: 20px;
+  margin: 20px 0;
+}

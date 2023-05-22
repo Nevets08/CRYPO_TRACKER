@@ -1,18 +1,17 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import fourCryptosData from "../data/fourCryptosData.json";
+import { Link } from "react-router-dom";
 
 export default function FourCryptos() {
   const [datas, setDatas] = useState([]);
 
   const fetchData = () => {
-    /*axios
+    axios
       .get(
         "https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&order=market_cap_desc&per_page=4&page=1&sparkline=false"
       )
-      .then((response) => setDatas(response.data));*/
-
-    setDatas(fourCryptosData);
+      .then((response) => setDatas(response.data));
   };
 
   useEffect(() => {
@@ -23,20 +22,24 @@ export default function FourCryptos() {
   return (
     <div className="four-cryptos">
       {datas.map((coin) => (
-        <div>
+        <Link to={`/coin/${coin.id}`} className="four-cryptos-container">
           <img src={coin.image} alt="" />
           <div className="four-cryptos-title">
-            <h5>{coin.name}</h5>
-            <h5
-              className={
-                Number(coin.price_change_percentage_24h) >= 0 ? "green" : "red"
-              }
-            >
-              {coin.price_change_percentage_24h.toFixed(2)}
+            <h5>
+              {coin.name}{" "}
+              <span
+                className={
+                  Number(coin.price_change_percentage_24h) >= 0
+                    ? "green"
+                    : "red"
+                }
+              >
+                {coin.price_change_percentage_24h.toFixed(2)}
+              </span>
             </h5>
             <h5>{coin.current_price.toFixed(2)} €</h5>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

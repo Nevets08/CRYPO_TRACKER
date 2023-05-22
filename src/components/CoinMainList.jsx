@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import allData from "../data/allData.json";
+import { Link } from "react-router-dom";
 
 export default function MainCoinList() {
   const [data, setData] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
 
   const fetchData = () => {
-    setData(allData);
-    /*
     axios
       .get(
         `https://api.coingecko.com/api/v3/coins/markets?vs_currency=eur&per_page=10&page=${currentPage}`
@@ -16,7 +15,6 @@ export default function MainCoinList() {
       .then((response) => {
         setData(response.data);
       });
-      */
   };
 
   useEffect(() => {
@@ -36,7 +34,7 @@ export default function MainCoinList() {
     }
   };
   return (
-    <>
+    <div id="market">
       <h2>Current Market</h2>
       <div className="crypto-title">
         <h4>COIN</h4>
@@ -45,7 +43,11 @@ export default function MainCoinList() {
         <h4>MARKET CAP</h4>
       </div>
       {data.map((coin) => (
-        <div key={coin.id} className="crypto-container">
+        <Link
+          to={`/coin/${coin.id}`}
+          key={coin.id}
+          className="crypto-container"
+        >
           <div className="crypto-name">
             <img src={coin.image} alt="" />
             <p>{coin.name}</p>
@@ -56,7 +58,7 @@ export default function MainCoinList() {
               Number(coin.price_change_percentage_24h) >= 0 ? "green" : "red"
             }
           >
-            {coin.price_change_percentage_24h.toFixed(2)}
+            {coin.price_change_percentage_24h.toFixed(2)} %
           </p>
           <p>
             {new Intl.NumberFormat("fr-FR", {
@@ -64,7 +66,7 @@ export default function MainCoinList() {
               currency: "EUR",
             }).format(coin.market_cap)}
           </p>
-        </div>
+        </Link>
       ))}
       {currentPage <= 1 ? (
         ""
@@ -76,6 +78,6 @@ export default function MainCoinList() {
       <button onClick={handleClick} type="button" name="next">
         Next page
       </button>
-    </>
+    </div>
   );
 }

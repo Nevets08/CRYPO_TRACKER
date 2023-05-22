@@ -1,0 +1,68 @@
+@import "./colors";
+@import "./typography";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: $background;
+  color: $white;
+  max-width: 80%;
+  margin: auto;
+}
+
+h1 {
+  font-size: $h1-size;
+  line-height: $h1-height;
+}
+
+h2 {
+  color: $green;
+  font-size: $h2-size;
+  line-height: $h2-height;
+}
+
+h5 {
+  font-size: $h5-size;
+}
+
+section {
+  margin: 60px 0;
+}
+
+* {
+  font-family: $font;
+}
+
+.red {
+  color: red;
+}
+
+.green {
+  color: green;
+}
+
+button,
+.button {
+  background-color: $green;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 20px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+button[name="previous"] {
+  margin-right: 20px;
+}
+
+button:hover,
+a.button:hover,
+.four-cryptos-container:hover,
+.crypto-container:hover {
+  transform: scale(110%);
+  transition: all 0.3s;
+}

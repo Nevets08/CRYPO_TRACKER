@@ -1,0 +1,29 @@
+.coin-detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+  max-width: 80%;
+  margin: auto;
+}
+
+.coin-detail-left {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 5%;
+    h2 {
+        margin: 20px 0 5px 0;
+    }
+}
+
+.coin-detail-right {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-around;
+}
+
+.coin-detail-description {
+  height: 300px;
+  overflow-y: scroll;
+}

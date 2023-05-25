@@ -12,4 +12,8 @@
 
 <h3>Apercu du projet</h3>
 
+<p>Page d'accueil</p>
 <img src='https://github.com/Nevets08/CRYPO_TRACKER/blob/main/src/images/capture-home.png'>
+
+<p>Page détail d'une cryptomonnaie</p>
+<img src='https://github.com/Nevets08/CRYPO_TRACKER/blob/main/src/images/capture-detail.png'>

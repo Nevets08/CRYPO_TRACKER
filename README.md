@@ -10,3 +10,6 @@
     <li>SCSS</li>
 </ul>
 
+<h3>Apercu du projet</h3>
+
+<img src='https://github.com/Nevets08/CRYPO_TRACKER/blob/main/src/images/capture-home.png'>

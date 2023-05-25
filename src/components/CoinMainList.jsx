@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import allData from "../data/allData.json";
 import { Link } from "react-router-dom";
 
 export default function MainCoinList() {
